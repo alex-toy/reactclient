@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+
+
+
+metadata:
+  name: server-cluster-ip-4
+
+
+
+spec:
+  type: ClusterIP
+  selector:
+    app: lead-scoring-app
+  ports:
+    - port: 5000
+      targetPort: 5000

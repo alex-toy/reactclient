@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+
+
+
+metadata:
+ name: load-balancer-client-4
+
+
+
+spec:
+ type: LoadBalancer
+ 
+ ports:
+ - port: 80
+   protocol: TCP
+   targetPort: 3000
+   nodePort: 30219
+ 
+ selector:
+   app: client-app
+ 

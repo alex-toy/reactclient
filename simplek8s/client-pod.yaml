@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: client-pod-4
+  labels:
+    app: client-app
+    component: web
+
+spec:
+  containers:
+    - name: client
+      image: eu.gcr.io/yotta-square-ml3/chaos-frontend-4:develop-v15
+      ports:
+        - containerPort: 3000

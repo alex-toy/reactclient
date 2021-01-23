@@ -21,20 +21,10 @@ build-docker-image:
   script:
   - echo $IMAGE_NAME
   - echo "$GITLAB_IAM_PRIVATE_KEY" > key.json
-  - docker build . -t $IMAGE_NAME
+  - docker build -t $IMAGE_NAME -f Dockerfile.dev .
   - docker login -u _json_key -p "$(cat key.json)" $IMAGE_NAME
   - docker push $IMAGE_NAME
 
-unit-test:
-  image: python:3.8.5
-  stage: test
-  script: 
-    - pip install -r requirements.txt
-    - pip install -e .
-    - pytest lead_scoring/test/unit
-  only:
-    - develop
-    - staging
 
 deploy-api:
   stage: deploy
@@ -52,6 +42,5 @@ deploy-api:
     - develop
     - staging
     - master
-    - alex-import-model-from-gcp
 
 

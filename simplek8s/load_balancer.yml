@@ -4,7 +4,7 @@ kind: Service
 
 
 metadata:
- name: load-balancer-client-4
+ name: load-balancer-client-PROJECT_NAME-ENVIRONMENT
 
 
 

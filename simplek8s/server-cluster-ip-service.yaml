@@ -4,7 +4,7 @@ kind: Service
 
 
 metadata:
-  name: server-cluster-ip-4
+  name: server-cluster-ip-4-PROJECT_NAME-ENVIRONMENT
 
 
 

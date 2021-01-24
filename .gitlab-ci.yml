@@ -38,9 +38,9 @@ deploy-api:
     - gcloud config set compute/zone europe-west1-b 
     - gcloud container clusters get-credentials chaos-cluster 
     - cat simplek8s/client-pod.yaml | sed "s/ENVIRONMENT/$CI_COMMIT_BRANCH/" | sed "s/PROJECT_NAME/$CI_PROJECT_NAME/" | sed "s/TAG/$CI_COMMIT_SHA/" | kubectl apply -f -
-    - cat simplek8s/load_balancer.yml | sed "s/ENVIRONMENT/$CI_COMMIT_BRANCH/" | sed "s/PROJECT_NAME/$CI_PROJECT_NAME/" | kubectl apply -f -
-    - cat simplek8s/client-cluster-ip-service.yml | sed "s/ENVIRONMENT/$CI_COMMIT_BRANCH/" | sed "s/PROJECT_NAME/$CI_PROJECT_NAME/" | kubectl apply -f -
-    - cat simplek8s/server-cluster-ip-service.yml | sed "s/ENVIRONMENT/$CI_COMMIT_BRANCH/" | sed "s/PROJECT_NAME/$CI_PROJECT_NAME/" | kubectl apply -f -
+    - cat k8s/load_balancer.yml | sed "s/ENVIRONMENT/$CI_COMMIT_BRANCH/" | sed "s/PROJECT_NAME/$CI_PROJECT_NAME/" | kubectl apply -f -
+    - cat k8s/client-cluster-ip.yml | sed "s/ENVIRONMENT/$CI_COMMIT_BRANCH/" | sed "s/PROJECT_NAME/$CI_PROJECT_NAME/" | kubectl apply -f -
+    - cat k8s/server-cluster-ip.yml | sed "s/ENVIRONMENT/$CI_COMMIT_BRANCH/" | sed "s/PROJECT_NAME/$CI_PROJECT_NAME/" | kubectl apply -f -
   only:
     - develop
     - staging

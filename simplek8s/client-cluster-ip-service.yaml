@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 
 metadata:
-  name: client-cluster-ip-PROJECT_NAME-ENVIRONMENT
+  name: client-cluster-ip-ENVIRONMENT
 
 spec:
   type: ClusterIP

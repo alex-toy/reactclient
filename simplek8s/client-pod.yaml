@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 
 metadata:
-  name: client-pod-PROJECT_NAME-ENVIRONMENT
+  name: client-pod-ENVIRONMENT
   labels:
     app: client-app
     component: web
@@ -10,6 +10,6 @@ metadata:
 spec:
   containers:
     - name: client
-      image: eu.gcr.io/yotta-square-ml3/PROJECT_NAME:ENVIRONMENT-TAG
+      image: eu.gcr.io/yotta-square-ml3/clientreact:ENVIRONMENT-TAG
       ports:
         - containerPort: 3000
